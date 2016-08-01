@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HTMLHelpers.Models.ContactInfo>
+
+@{
+    ViewBag.Title = "ContactList";
+}
+
+<h2>Contact List</h2>
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+<div style="width: 100%">
+    @Html.DropDownList("ddlName", new SelectList(Model, "Id", "Name"), new { style="width: 50%;"})
+</div>
+
+<br />
+<div style="width: 100%">
+    @Html.ListBox("lstEmail", new SelectList(Model, "Id", "Email"), new { @class = "listBoxStyle" })
+</div>*@
+
+<br />
+<div>
+    @{ 
+        for (int i = 0; i < 10; i++)
+        {
+            var temp = i + 5;
+            <p>This is iteration @temp</p>
+        }
+    }
+</div>
+
+

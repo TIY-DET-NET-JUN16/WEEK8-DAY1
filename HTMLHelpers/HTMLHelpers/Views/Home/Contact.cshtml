@@ -1,0 +1,73 @@
+﻿@model HTMLHelpers.Models.ContactInfo
+
+@{
+    ViewBag.Title = "Contact Information";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.Hidden("hiddenId", Model.Id)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblName", "Name", new { id = "lblName", @class = "labels"})
+    </div>
+
+    <div>
+        @Html.TextBox("txtName", Model.Name)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblEmail", "Email", new { id = "lblEmail" })
+    </div>
+
+    <div>
+        @Html.TextBox("txtEmail", Model.Email)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblPhone", "Phone Number", new { id = "lblPhone", @class="labels" })
+    </div>
+
+    <div>
+        @Html.TextBox("txtPhone", Model.PhoneNumber)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblDetails", "Details", new { id = "lblDetails", @class = "labels" })
+    </div>
+
+    <div>
+        @Html.TextArea("txtAreaDetails", Model.Details, 5, 50, null)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblPassword", "Password", new { id = "lblPassword", @class = "labels" })
+    </div>
+
+    <div>
+        @Html.Password("pass", Model.Password)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblSendEmail", "Send Email", new { id = "lblSendEmail", @class = "labels" })
+        @Html.CheckBox("chkBoxSendEmail", Model.SendEmail)
+    </div>
+
+    <br />
+    <div>
+        @Html.Label("lblGender", "Gender")
+        <br />
+        @Html.Label("lblMale", "Male")@Html.RadioButton("radioGender", Model.Gender, Model.Gender=="Male")
+        @Html.Label("lblFemale", "Female")@Html.RadioButton("radioGender", Model.Gender, Model.Gender == "Female")
+    </div>
+}
+
+
